@@ -32,7 +32,7 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-24">
+    <section className="max-w-7xl mx-auto px-6 py-24 mt-10">
       <div className="text-center mb-16">
         <h2 className="text-[10px] font-black uppercase tracking-[0.5em] text-blue-500 mb-4">Core Protocols</h2>
         <h3 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter text-white">

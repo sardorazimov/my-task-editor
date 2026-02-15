@@ -2,95 +2,63 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ChevronRight } from "lucide-react";
+import { ArrowDown, ChevronRight, MoveUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { DotPattern } from "../components/shared/dot-pattern";
 import AnimatedHeader from "../components/shared/header";
 import MagicFooter from "../components/shared/footer";
 import { FeaturesSection } from "../components/shared/feature-sections";
 import { CallToAction } from "../components/shared/call-to-actions";
+import { Hero3DStage } from "../components/shared/hero-3d";
+import { useRouter } from "next/navigation";
 // Senin bileşenin yolu
 
 export default function HeroSection() {
+  const router = useRouter();
   return (
-    <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-[#050505]">
-      <AnimatedHeader />
-      
-      {/* 1. ÜSTTEKİ KÜÇÜK BADGE (Introducing Magic UI...) */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="z-20 mb-8"
-      >
-        <div className="group flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 backdrop-blur-md transition-all hover:bg-white/10">
-          <span className="text-[10px] font-medium text-zinc-400">
-            ✨ Introducing <span className="text-white font-bold">Lumina.AI v1.0</span>
-          </span>
-          <ChevronRight size={12} className="text-zinc-500 group-hover:translate-x-0.5 transition-transform" />
-        </div>
-      </motion.div>
+    <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden ">
+      <div className="min-h-screen bg-gradient-to-b from-[#111] to-[#222] text-white px-8 py-6 font-sans w-full ">
+        {/* Navbar */}
+        <AnimatedHeader />
 
-      {/* 2. ANA BAŞLIK (TEXT) */}
-      <div className="z-20 flex flex-col items-center text-center px-6">
-        <motion.h1
-          initial={{ opacity: 0, filter: "blur(10px)", y: 20 }}
-          animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-8xl font-bold tracking-tighter text-white"
-        >
-          Lumina AI is the <br /> 
-          <span className="bg-gradient-to-b from-white to-zinc-500 bg-clip-text text-transparent">
-            new way to build.
-          </span>
-        </motion.h1>
+        {/* Main Content */}
+        <main className="max-w-full  mx-auto mt-32">
+          <h1 className="text-7xl md:text-[120px] font-bold leading-[0.9] tracking-tighter mb-8">
+            AI Services <br />
+            <span className="text-gray-500">for your Business <br /> Growth</span>
+          </h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-6 max-w-2xl text-zinc-400 md:text-xl font-medium leading-relaxed"
-        >
-          Beautifully designed, animated components and templates built with <br className="hidden md:block" />
-          Tailwind CSS, React, and Framer Motion.
-        </motion.p>
+          <p className="text-gray-400 max-w-md text-lg mb-12">
+            We&#39;ll pump your company with AI. As a leading AI automation agency
+            with 99 years of experience, we deliver top results.
+          </p>
 
-        {/* 3. BUTON */}
-        <motion.button
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-10 rounded-full bg-white px-8 py-3 text-sm font-bold text-black hover:bg-zinc-200 transition-colors flex items-center gap-2"
-        >
-          Get Started for free <ChevronRight size={16} />
-        </motion.button>
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap items-center gap-6">
+            <button 
+             onClick={() => router.push("/dashboard")}
+              className="bg-[#e2ff3b] text-black px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform cursor-pointer">
+              Get Started
+            </button>
+            
+
+            <div className="flex items-center gap-3 ml-auto">
+              <span className="text-xs text-gray-500 max-w-[80px] leading-tight">Loved by founders worldwide</span>
+              <div className="flex -space-x-3">
+                {/* Buraya profil resimleri gelecek */}
+                <div className="w-10 h-10 rounded-full border-2 border-[#111] bg-gray-600" />
+                <div className="w-10 h-10 rounded-full border-2 border-[#111] bg-gray-500" />
+              </div>
+              <div className="p-3 rounded-full bg-white/10 border border-white/20">
+                <ArrowDown size={20} />
+              </div>
+            </div>
+          </div>
+        </main>
       </div>
-
-      {/* 4. MAGIC UI IŞIK SÜZMESİ (BEAM EFFECT) */}
-      {/* Bu kısım görseldeki o tepeden gelen sarımsı/beyaz ışığı yapar */}
-      <div 
-        className="absolute top-0 z-10 h-[600px] w-full pointer-events-none opacity-50"
-        style={{
-          background: "radial-gradient(circle 800px at 50% -100px, rgba(255,255,255,0.15), transparent)"
-        }}
-      />
-      
-      {/* Alt taraftaki hafif parlamalar */}
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_50%_120%,rgba(59,130,246,0.1),transparent_50%)]" />
-
-      {/* 5. DOT PATTERN (AYRI OLARAK EN ALTTA) */}
-      <DotPattern
-        width={32}
-        height={32}
-        cr={1}
-        className={cn(
-          "[mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,white,transparent)]",
-          "opacity-40"
-        )}
-      /> 
-      <CallToAction />
       <FeaturesSection />
-       <MagicFooter />
+      <MagicFooter />
+
     </div>
   );
 }

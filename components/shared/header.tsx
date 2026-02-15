@@ -31,7 +31,7 @@ export default function AnimatedHeader() {
   );
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[100] flex justify-center pointer-events-none">
+    <div className="fixed top-0 left-0 right-0 z-[100] mt-3 flex justify-center pointer-events-none ">
       <motion.header
         style={{
           top,
@@ -40,7 +40,7 @@ export default function AnimatedHeader() {
           backgroundColor,
           borderColor,
         }}
-        className="pointer-events-auto border backdrop-blur-md flex items-center justify-between px-8 h-16 transition-colors shadow-2xl shadow-black/50"
+        className="pointer-events-auto  flex items-center justify-between  h-16 transition-colors shadow-2xl shadow-black/50 bg-[#1a1a1a]/50 px-6 py-2 rounded-full border border-gray-800 backdrop-blur-md"
       >
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-2 group">
