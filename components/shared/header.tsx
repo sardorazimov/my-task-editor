@@ -55,7 +55,7 @@ export default function AnimatedHeader() {
           {["Analyze", "History", "Upgrades"].map((item) => (
             <Link
               key={item}
-              href={`/${item.toLowerCase()}`}
+              href={`/dashboard/${item.toLowerCase()}`}
               className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors"
             >
               {item}
