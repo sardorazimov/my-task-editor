@@ -44,9 +44,9 @@ export default function AnimatedHeader() {
       >
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-2 group">
-          <Terminal size={20} className="text-blue-500" />
+        <img src="/logo.svg" alt="Welldraw Logo" className="w-12" />
           <span className="font-black italic uppercase tracking-tighter text-white text-lg">
-            Lumina<span className="text-blue-500">.AI</span>
+            Welldraw<span className="text-blue-500">.</span>
           </span>
         </Link>
 
