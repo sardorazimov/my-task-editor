@@ -2,13 +2,16 @@ import React from 'react'
 import { HeroSections } from '../components/shared/hero-3d'
 import { Footprints } from 'lucide-react'
 import MagicFooter from '../components/shared/footer'
-import CTASection from '../components/shared/feature-sections'
+import Testimonials from '../components/shared/testimonials'
+import SmartUserCounter from '../components/shared/live-counter'
+
 
 const page = () => {
   return (
     <div>
       <HeroSections />
-       <CTASection />
+       <Testimonials />
+       
       <MagicFooter/>
     </div>
   )

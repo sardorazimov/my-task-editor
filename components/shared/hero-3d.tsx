@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import AnimatedHeader from "./header";
 import { useRouter } from "next/navigation";
+import HeroMockup from "./dashboard-mackup";
 
 export function HeroSections() {
   return (
@@ -254,12 +255,12 @@ export const Hero = () => {
       >
         <h1 className="font-manrope text-left text-3xl font-bold tracking-tight text-white text-shadow-lg text-shadow-white/20 sm:text-4xl md:text-5xl lg:text-6xl">
           Draw better. Think faster.
-    <br className="hidden sm:block" /> The modern whiteboard for fast thinking.
+          <br className="hidden sm:block" /> The modern whiteboard for fast thinking.
 
         </h1>
         <p className="mt-3 max-w-xl text-lg font-light text-neutral-400 sm:mt-4 sm:text-xl md:text-2xl lg:text-3xl">
-         The modern whiteboard for fast thinking.
-.
+          The modern whiteboard for fast thinking.
+          .
         </p>
 
         <div className="mt-8 flex flex-col items-start gap-4 sm:mt-10 sm:flex-row sm:items-center sm:gap-6 md:mt-12 md:gap-8">
@@ -272,10 +273,10 @@ export const Hero = () => {
             Explore templates
           </button>
           <button className="cursor-pointer text-sm text-neutral-400 sm:text-base">
-            
+
           </button>
         </div>
-        <div className="relative mt-8 overflow-hidden rounded-xl border border-neutral-700 bg-neutral-800 p-px sm:mt-10 sm:rounded-2xl md:mt-12 md:rounded-3xl">
+        <div className="relative mt-8 overflow-hidden rounded-xl border border-neutral-950 bg-neutral-950 p-px sm:mt-10 sm:rounded-2xl md:mt-12 md:rounded-3xl">
           <motion.div
             initial={{
               opacity: 0,
@@ -294,14 +295,18 @@ export const Hero = () => {
             <div className="absolute top-0 right-5 h-px w-32 bg-[radial-gradient(ellipse_at_top,var(--color-yellow-500),_transparent)] blur-[2px] sm:right-8 sm:w-40 md:right-10 md:w-60"></div>
             <div className="absolute top-0 right-5 h-px w-32 bg-[radial-gradient(ellipse_at_top,var(--color-yellow-500),_transparent)] blur-[4px] sm:right-8 sm:w-40 md:right-10 md:w-60"></div>
           </motion.div>
-          <div className="relative z-20 rounded-[11px] bg-neutral-800 p-1 sm:rounded-[17px] sm:p-1.5 md:rounded-[23px] md:p-2">
-            <img
+          <div className="relative z-20  ">
+            <div className="h-full w-full rounded-lg object-cover object-bottom-right  sm:rounded-xl md:rounded-2xl">
+                <HeroMockup />
+            </div>
+           
+            {/* <img
               src="/hero.png"
               alt="hero"
               width={1000}
               height={1000}
               className="h-full w-full rounded-lg object-cover object-bottom-right grayscale sm:rounded-xl md:rounded-2xl"
-            />
+            /> */}
           </div>
         </div>
       </motion.div>
